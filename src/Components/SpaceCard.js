@@ -1,5 +1,7 @@
+import '../App.css'
 import { useState } from 'react'
 import moment from 'moment'
+import ReadMoreReact from 'read-more-react'
 import { RiHeartsLine, RiHeartsFill } from 'react-icons/ri'
 
 
@@ -26,13 +28,21 @@ export default function SpaceCard(props){
         setLiked(!liked)
     }
 
+    const readMoreText = <button className="read-more-button" >Read More...</button>
+
     return(
         <div className="space-card">
             <img className="card-image" src={imageURL} alt={title}/>
             <h2 className="card-title">{title}</h2>
             <h5 className="card-date">{dateFormatting(date)}</h5>
             <button className="like-button" onClick={userLiking}>{ifLike()}</button>
-            <text className="card-explanation">{explanation}</text>
+            <ReadMoreReact 
+                text={explanation} 
+                min={80}
+                ideal={100}
+                max={120}
+                readMoreText={readMoreText}
+            />
         </div>
     )
 }

@@ -1,10 +1,26 @@
 .App {
-  text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #19547b;
 }
+
+
+.header{
+  width: 100%;
+  height: fit-content;
+  margin: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+}
+.header-icon{
+  width: fit-content;
+  min-height: 120px;
+  color: #ffd89b;
+}
+
 
 .space-container{
   height: fit-content;
@@ -15,44 +31,81 @@
   align-items: center;
 }
 
+
 .space-card{
   height: fit-content;
   width: 60%;
   margin: 16px;
   padding: 8px;
-  border: #19547bb2 2px solid;
-  border-radius: 8px;
-  background-color: #ffd89b;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-}
-.card-title{
+  border: #19547b80 2px solid;
+  border-radius: 16px;
+  background-color: #ffd89b;
 
 }
 .card-date{
   margin-top: -16px;
 }
-.card-explanation{
-  margin-top: 24px;
-}
 .card-image{
   max-width: 99.5%;
   height: fit-content;
-  border-radius: 8px;
+  border: #19547b 2px solid;
+  border-radius: 16px;
+}
+.read-more-button{
+  background-color: transparent;
+  border: transparent;
+  color: #19547b;
+}
+.read-more-button:hover{
+  background-color: transparent;
+  border: transparent;
+  color: #19547b80;
 }
 
 .like-button{
+  margin-bottom: 24px;
   background-color: transparent;
   border: transparent;
+  
 }
+
+
 .liked{
-  color: red;
   width: 32px;
   height: 32px;
+  color: red;
+}
+.liked:active{
+  width: 32px;
+  height: 32px;
+  color: red;
+  animation: rotate-diagonal-1 0.25s;
 }
 .not-liked{
   width: 32px;
   height: 32px;
+  color: #19547b;
+}
+.not-liked:active{
+  width: 32px;
+  height: 32px;
+  color: #19547b;
+  animation: rotate-diagonal-1 0.25s;
+}
+
+
+@keyframes rotate-diagonal-1 {
+  0% {
+    transform: rotate3d(1, 1, 0, 0deg);
+  }
+  50% {
+    transform: rotate3d(1, 1, 0, -180deg);
+  }
+  100% {
+    transform: rotate3d(1, 1, 0, -360deg);
+  }
 }
