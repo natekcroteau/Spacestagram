@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import moment from 'moment'
-import { RiChatHeartLine, RiChatHeartFill } from 'react-icons/ri'
+import { RiHeartsLine, RiHeartsFill } from 'react-icons/ri'
 
 
 export default function SpaceCard(props){
@@ -20,7 +20,7 @@ export default function SpaceCard(props){
         return moment(startDate).format("MMMM Do, YYYY")
     }
 
-    const ifLike = () => liked ? <RiChatHeartFill className="liked" /> : <RiChatHeartLine className="not-liked" />
+    const ifLike = () => liked ? <RiHeartsFill className="liked" /> : <RiHeartsLine className="not-liked" />
 
     function userLiking(){
         setLiked(!liked)
@@ -30,11 +30,9 @@ export default function SpaceCard(props){
         <div className="space-card">
             <img className="card-image" src={imageURL} alt={title}/>
             <h2 className="card-title">{title}</h2>
-            <div className ="card-date-like">
-                <span className="card-date">{dateFormatting(date)}</span>
-                <button onClick={userLiking}>{ifLike()}</button>
-            </div>
-            <p className="card-explanation">{explanation}</p>
+            <h5 className="card-date">{dateFormatting(date)}</h5>
+            <button className="like-button" onClick={userLiking}>{ifLike()}</button>
+            <text className="card-explanation">{explanation}</text>
         </div>
     )
 }
