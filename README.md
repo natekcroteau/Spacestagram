@@ -24,9 +24,9 @@ Spacestagram is a minimalistic React web application featuring a feed of 20 rand
 
 ## Setup
 
-To expand upon Spacestagram, install frontend directory locally using the following command:
+To expand upon Spacestagram, install the frontend directory locally using the following command:
 ```
-git@github.com:natekcroteau/Spacestagram.git
+git clone git@github.com:natekcroteau/Spacestagram.git
 ```
 Install dependencies once in the directory
 ```
